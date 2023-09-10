@@ -1,0 +1,25 @@
+[
+    {
+        "id":0,
+        "subject":"Math",
+        "score": 86
+
+    },
+    {
+        "id":1,
+        "subject":"English",
+        "score": 12
+    },
+    {
+        "id":2,
+        "subject":"Python",
+        "score": 34
+
+    },
+    {
+        "id":3,
+        "subject":"Electronics",
+        "score": 68
+
+    }
+]
