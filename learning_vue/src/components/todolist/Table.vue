@@ -139,29 +139,29 @@ onMounted(() => {
 const handleDelete = (id) => {
   console.log("这是id", id);
   todo.deleteTodo(id);
-  do_reload();
+  // do_reload();
   // location.reload();
 };
 
 const statusChange = (id, is_finished) => {
-  if (is_finished == false) {
-    todo.changeStatusTodo(id, true);
-  } else {
-    todo.changeStatusTodo(id, false);
-  }
-
-  do_reload();
+  // if (is_finished == false) {
+  //   todo.changeStatusTodo(id, true);
+  // } else {
+  //   todo.changeStatusTodo(id, false);
+  // }
+  todo.changeStatusTodo(id, !is_finished)
+  // do_reload();
   // location.reload();
 };
 
 const handleReward = (user_id, dodo, todo_id, ability) => {
 
     userStore.changeUserAbility(user_id, ability)
-    userStore.changeUserDoDo(user_id, dodo) 
+    userStore.changeUserDoDo(user_id, dodo)
     todo.deleteTodo(todo_id);
     // location.reload();
     
-    do_reload();
+    // do_reload();
   
 
 }

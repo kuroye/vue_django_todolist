@@ -59,7 +59,8 @@
             "TodoForm",
             "Register",
             "Login",
-            "Profile"
+            "Profile",
+            "Card"
           ]
         }
       ]

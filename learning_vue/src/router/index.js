@@ -7,6 +7,7 @@ const SingleGroup = ()=> import('@/pages/ability/SingleGroupPage.vue')
 const Profile = ()=> import('@/pages/ProfilePage.vue')
 const Register = ()=> import('@/pages/RegisterPage.vue')
 const Login = ()=> import('@/pages/LoginPage.vue')
+const Lottery = ()=> import('@/pages/LotteryPage.vue')
 
 const routes = [  
     {    path: '/',    name: 'todolist',    component: Todolist  }, 
@@ -17,6 +18,7 @@ const routes = [
     {    path: '/ability/group',    name: 'add group',    component: AbilityGroup,  }, 
     {    path: '/ability/group/:id',    name: 'single group',    component: SingleGroup,  }, 
     {    path: '/profile',    name: 'profile',    component: Profile,  }, 
+    {    path: '/lottery',    name: 'lottery',    component: Lottery,  }, 
 ]
 const router = createRouter({  
     history: createWebHistory(),  

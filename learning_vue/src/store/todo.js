@@ -64,6 +64,11 @@ export const useTodo = defineStore("todo", {
       const data = await axios.patch(BASEURL+'todo/update/' + todo_id, {
         "is_finished": todo_bool_data
       })
+
+      const todo_index = this.todos.findIndex(todo => todo.id == todo_id);
+
+      this.todos[todo_index] = data.data 
+
       console.log(data.data);
        
       } catch (error) {
@@ -74,6 +79,9 @@ export const useTodo = defineStore("todo", {
     async deleteTodo(todo_id) {
       try {
       const data = await axios.delete(BASEURL+'todo/' + todo_id)
+
+      this.todos = this.todos.filter(todo => todo.id != todo_id)
+
       console.log(data.data);
        
       } catch (error) {

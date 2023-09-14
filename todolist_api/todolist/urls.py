@@ -25,6 +25,7 @@ urlpatterns = [
     path('api/todo', include('todo.urls')),
     path('api/ability', include('ability.urls')),
     path('api/user', include('user.urls')),
+    path('api/lottery', include('lottery.urls')),
 
     path('api-auth/', include('rest_framework.urls')),  # drf 认证url
     # path('api-token-auth/', views.obtain_auth_token),  # drf token获取的url

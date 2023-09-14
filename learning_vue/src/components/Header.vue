@@ -52,7 +52,7 @@
     </el-col>
     <el-col :span="8"> 
       <div class="button-container">
-          <router-link to="/"><el-button type="warning" size="large" :icon="MagicStick">Card</el-button></router-link>
+          <router-link to="/lottery"><el-button type="warning" size="large" :icon="MagicStick">Card</el-button></router-link>
       </div></el-col>
     
   </el-row>
