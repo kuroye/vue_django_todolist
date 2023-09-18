@@ -1,4 +1,5 @@
 from django.db import models
+from user.models import MyUser
 
 # Create your models here.
 class Card(models.Model):
@@ -11,6 +12,8 @@ class Card(models.Model):
 
     title = models.CharField(max_length=200, null=False)
     rarity = models.CharField(max_length=1, choices=RARITY_CHOICES)
+
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
