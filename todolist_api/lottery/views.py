@@ -26,3 +26,13 @@ class CardView(APIView):
         
         else:
             return Response({'msg':'no card '+str(random_star)})
+
+    def post(self, request):
+
+        serializer = CardSerializer(request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        
+        return Response(serializer.error)
