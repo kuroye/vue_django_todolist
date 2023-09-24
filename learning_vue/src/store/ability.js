@@ -8,6 +8,7 @@ import {BASEURL} from '@/store/urls'
 export const useAbilityStore = defineStore("ability", {
   state: () => ({
     abilities: [],
+    abilityGroups: []
     // single: [],
   }),
   // getters: {
@@ -40,6 +41,9 @@ export const useAbilityStore = defineStore("ability", {
         "name": group_data.name,
         "user": group_data.user_id
       })
+      
+      this.abilityGroups = data.data
+
       console.log(data.data);
        
       } catch (error) {
