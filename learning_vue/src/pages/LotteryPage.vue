@@ -1,8 +1,8 @@
 <template>
     <h1>I AM LOTTERY</h1>
-    <Card/>
+    <CardList/>
 </template>
 
 <script setup>
- import Card from '@/components/lottery/Card.vue'
+ import CardList from '@/components/lottery/CardList.vue'
 </script>
