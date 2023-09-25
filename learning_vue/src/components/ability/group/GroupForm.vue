@@ -41,7 +41,7 @@ function onClick() {
     console.log("u clicked");
     store.postAbilitiyGroup({"name":form.name,
                             "user_id":user_id})
-    router.push({ path: '/ability'})
+    router.push({ path: '/'})
 }
 </script>
 
