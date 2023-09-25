@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Card
+from .models import Card, CardStock
 
 class CardSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,3 +10,8 @@ class CardSerializer(serializers.ModelSerializer):
         data = super().to_representation(obj)
         data['rarity'] = obj.get_rarity_display()
         return data
+
+class CardStockSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CardStock
+        fields = '__all__'

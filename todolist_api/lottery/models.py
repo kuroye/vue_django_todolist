@@ -17,3 +17,11 @@ class Card(models.Model):
 
     def __str__(self):
         return self.title
+
+class CardStock(models.Model):
+
+    user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    card = models.ForeignKey(Card, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user + self.card

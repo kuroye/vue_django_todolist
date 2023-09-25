@@ -1,10 +1,11 @@
 from django.shortcuts import render
 
-from .models import Card
-from .serializers import CardSerializer
+from .models import Card, CardStock
+from .serializers import CardSerializer, CardStockSerializer
 import random
 from rest_framework.response import Response
 from rest_framework.views import APIView 
+from rest_framework import generics 
 
 from .utils import get_random_star
 # Create your views here.
@@ -36,4 +37,7 @@ class CardView(APIView):
             return Response(serializer.data)
         
         return Response(serializer.error)
-        
+
+class CardStockView(generics.ListCreateAPIView):
+    queryset = CardStock.objects.all()
+    serializer_class = CardStockSerializer
