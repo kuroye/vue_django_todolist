@@ -15,14 +15,14 @@ export const useCard = defineStore("card", {
         cards: [],
       }),
       actions: {
-        async getCard() {
+        async getAllCard() {
             try {
               const data = await axios.get(BASEURL+'lottery/' 
-            //,   {
-                // params:{
-                //   id: user_id
-                // }
-            //   }
+            ,   {
+                params:{
+                  id: user_id
+                }
+              }
               )
               this.cards = data.data
               
