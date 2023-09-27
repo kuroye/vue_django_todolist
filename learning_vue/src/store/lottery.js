@@ -17,7 +17,39 @@ export const useCard = defineStore("card", {
       actions: {
         async getAllCard() {
             try {
-              const data = await axios.get(BASEURL+'lottery/' 
+              const data = await axios.get(BASEURL+'lottery/all-card/' 
+            ,   {
+                params:{
+                  id: user_id
+                }
+              }
+              )
+              this.cards = data.data
+              
+            } catch (error) {
+              alert(error)
+              console.log(error);
+            }
+          },
+          async getCardStock() {
+            try {
+              const data = await axios.get(BASEURL+'lottery/card-stock/' 
+            ,   {
+                params:{
+                  id: user_id
+                }
+              }
+              )
+              this.cards = data.data
+              
+            } catch (error) {
+              alert(error)
+              console.log(error);
+            }
+          },
+          async drawCard() {
+            try {
+              const data = await axios.get(BASEURL+'lottery/draw-card/' 
             ,   {
                 params:{
                   id: user_id
