@@ -24,4 +24,4 @@ class CardStock(models.Model):
     card = models.ForeignKey(Card, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user + self.card
+        return str(self.user) +' '+str(self.card) 

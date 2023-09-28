@@ -15,7 +15,7 @@ export const useCard = defineStore("card", {
         cards: [],
       }),
       actions: {
-        async getAllCard() {
+        async getAllCard(user_id) {
             try {
               const data = await axios.get(BASEURL+'lottery/all-card/' 
             ,   {
@@ -31,7 +31,7 @@ export const useCard = defineStore("card", {
               console.log(error);
             }
           },
-          async getCardStock() {
+          async getCardStock(user_id) {
             try {
               const data = await axios.get(BASEURL+'lottery/card-stock/' 
             ,   {
@@ -47,7 +47,7 @@ export const useCard = defineStore("card", {
               console.log(error);
             }
           },
-          async drawCard() {
+          async drawCard(user_id) {
             try {
               const data = await axios.get(BASEURL+'lottery/draw-card/' 
             ,   {

@@ -1,17 +1,19 @@
 <template>
-    <div style="display:flex;width:100%; justify-content:center;gap:16px">
-
+    <div style="display:flex; justify-content:center;">
+      <div style="width:80%;">
         <div v-for="x in card.cards" :key="x">
-        <el-card class="box-card" shadow="hover" style="width:max-content">
-      <template #header>
-        <div class="card-header">
-          <span>{{ x.rarity }}</span>
-          <!-- <el-button class="button" text>Operation button</el-button> -->
-        </div>
-      </template>
-      <div style="align-items:center" class="text item">{{ x.title }}</div>
+          <el-card class="box-card" shadow="hover" style="width:max-content">
+        <template #header>
+          <div class="card-header">
+            <span>{{ x.card.rarity }}</span>
+            <!-- <el-button class="button" text>Operation button</el-button> -->
+          </div>
+        </template>
+        <div style="align-items:center" class="text item">{{ x.card.title }}</div>
         </el-card>
         </div>
+      </div>
+        
 
     </div>
     
@@ -24,8 +26,15 @@ import {useCard} from "@/store/lottery";
 
 const card = useCard();
 
+import useUserStore from "@/store/user";
+
+const userStore = useUserStore();
+
+const user_id = userStore.user.id
+
+console.log(user_id);
 onMounted(() => {
-  card.getCard();
+  card.getCardStock(user_id);
 });
 
 </script>
