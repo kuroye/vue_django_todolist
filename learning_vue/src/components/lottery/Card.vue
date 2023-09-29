@@ -2,7 +2,7 @@
     <div style="display:flex; justify-content:center;">
       <div style="width:80%;">
         <div v-for="x in card.cards" :key="x">
-          <el-card class="box-card" shadow="hover" style="width:max-content">
+          <el-card class="box-card" shadow="hover" :style="[x.card.rarity=='Rare' ? {width:max-content, color:blue} : {width:max-content}]">
         <template #header>
           <div class="card-header">
             <span>{{ x.card.rarity }}</span>

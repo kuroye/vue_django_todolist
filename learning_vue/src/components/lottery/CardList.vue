@@ -2,7 +2,6 @@
     <div style="display:flex;width:100%; justify-content:center;gap:16px">
 
         <Card/>
-        <Card/>
         
 
     </div>
